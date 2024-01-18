@@ -135,11 +135,11 @@ public class PhoneBookApp {
 				System.out.println("<4.검색>");
 				
 				String search = sc.nextLine();
-				for(int i=0; i<pList.size(); i++) {
-					if(pList.get(i).contains()){
-						System.out.println(pList.get(i));
-					}
-				}
+//				for(int i=0; i<pList.size(); i++) {
+//					if(pList.get(i).contains()){
+//						System.out.println(pList.get(i));
+//					}
+//				}
 				
 			} else if(num == 5) {//5. 종료
 				System.out.println("**********************************");
