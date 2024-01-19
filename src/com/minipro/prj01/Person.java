@@ -39,5 +39,10 @@ public class Person {
 		return "Person [name=" + name + ", hp=" + hp + ", company=" + company + "]";
 	}
 
+	public boolean matches(String string) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 }

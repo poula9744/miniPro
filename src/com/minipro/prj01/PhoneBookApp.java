@@ -8,10 +8,13 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 public class PhoneBookApp {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws IOException {
 		
 		Scanner sc = new Scanner(System.in);
@@ -133,16 +136,15 @@ public class PhoneBookApp {
 		
 			} else if(num == 4) { //4. 검색
 				System.out.println("<4.검색>");
-				
 				sc.nextLine();
 				System.out.print(">이름: ");
 				String search = sc.nextLine();
 				
-				
-				for(int i=0; i<pList.size(); i++) {
-					if(pList.get(i).contains(search) == true){
-						System.out.println(pList.get(i));
-					}
+				for(Person person : pList) {
+					
+					if(person.matches(".*" + search + ".*") == true){
+						System.out.println(person);
+					} 
 				}
 				
 			} else if(num == 5) {//5. 종료
