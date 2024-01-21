@@ -8,13 +8,10 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.Scanner;
 
 public class PhoneBookApp {
 
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws IOException {
 		
 		Scanner sc = new Scanner(System.in);
@@ -34,9 +31,9 @@ public class PhoneBookApp {
 		ArrayList<Person> pList = new ArrayList<Person>();
 		
 		String[] personInfo = new String[3];
-		String name = personInfo[0];
-		String hp = personInfo[1];
-		String company = personInfo[2];
+		String name;
+		String hp;
+		String company;
 		
 		
 		
@@ -58,7 +55,7 @@ public class PhoneBookApp {
 				while (true) {
 					// 파일을 한줄 읽는다
 					String str = br.readLine();
-
+					num++;
 					
 					// null이면 반복문을 나간다 (글자가 없으면) --> 순서 중요
 					if (str == null) {
@@ -76,12 +73,11 @@ public class PhoneBookApp {
 					pList.add(p);
 					
 				}
-				
-				// 출력
-				//1. 2. 3. 넣어
 				for(int i=0; i<pList.size(); i++) {
 					System.out.println((i+1) + "." + pList.get(i).getName() + "\t" + pList.get(i).getHp() + "\t" + pList.get(i).getCompany());
 				}
+				
+
 		
 			} else if(num == 2) { //2-1. 등록: 정보입력
 				
@@ -140,10 +136,10 @@ public class PhoneBookApp {
 				System.out.print(">이름: ");
 				String search = sc.nextLine();
 				
-				for(Person person : pList) {
+				for(int i=0; i<pList.size(); i++) {
 					
-					if(person.matches(".*" + search + ".*") == true){
-						System.out.println(person);
+					if(pList.get(i).getName().contains(search) == true){
+						pList.get(i).showInfo();
 					} 
 				}
 				

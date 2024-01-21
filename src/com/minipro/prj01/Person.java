@@ -6,6 +6,7 @@ public class Person {
 	private String name;
 	private String hp;
 	private String company;
+	private int num;
 	
 	//생성자
 	public Person(String name, String hp, String company) {
@@ -38,10 +39,9 @@ public class Person {
 	public String toString() {
 		return "Person [name=" + name + ", hp=" + hp + ", company=" + company + "]";
 	}
-
-	public boolean matches(String string) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	public void showInfo() {
+		System.out.println(num + "." + getName() + "\t" + getHp() + "\t" + getCompany());
 	}
 
 	
